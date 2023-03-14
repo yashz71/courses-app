@@ -1,1 +1,27 @@
-<p>formation works!</p>
+<main class="main">
+  <div class="cont">
+  <div class="img-ber"></div>
+  <div class="img-b"></div>
+</div>
+<button mat-raised-button (click)="peuplerBD()">peupleeee</button>
+<button  class="log" mat-raised-button color="primary" [disabled]="!hasPrevPage" (click)="pagePrecedente()">precedente</button>
+
+<button class="log"  mat-raised-button color="primary" [disabled]="!hasNextPage" (click)="pageSuivante()">suivante</button>
+<div class="cards">
+    <mat-card class="example-card" *ngFor="let courses of courses">
+        <mat-card-header>
+          <mat-card-title id="c-title">{{courses.title}}</mat-card-title>
+        </mat-card-header>
+        <img id="card-img" mat-card-image src={{courses.img}} alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p id="card-p">
+            {{courses.desc}}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+            <button id="card-btn" mat-raised-button color="primary" ><a routerLink="/course/{{courses.title}}">More Details</a></button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+   
+</main>

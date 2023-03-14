@@ -1,0 +1,20 @@
+<form class="form" ngForm (submit)="onSubmit($event); assignmentForm.reset()"  #assignmentForm>
+    <mat-form-field>
+        <input matInput [(ngModel)]="userName" name="nom" placeholder="User Name" required>
+
+    </mat-form-field>
+</form>
+<form class="form">
+    <mat-form-field>
+        <input matInput [(ngModel)]="userMail" name="nom" placeholder="User Mail" required>
+
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput type="password" [(ngModel)]="userPass" name="nom" placeholder="Password" required>
+
+    </mat-form-field>
+    <button class="ajoutbtn" mat-stroked-button
+    color="primary"
+    (click)="onSubmit($event)"
+    >Ajouter un devoir</button>
+</form>

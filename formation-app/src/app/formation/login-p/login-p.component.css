@@ -1,0 +1,42 @@
+html{
+    height: 100%;
+    width: 100%;
+}
+body{
+    margin: 0;
+
+    height: 100%;
+    width: 100%;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+    margin-top: 0;
+}
+.btn{
+    margin: 10px;
+    font-size: medium;
+    width: 300px;
+    margin-left: 400px;
+}
+#title{
+    font-size: 60px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 340px;
+    margin-top: 10;
+    display: inline;
+}
+.InDiv{
+    display: block;
+    width: 500px;
+    margin-left: 300px;
+}
+.main{
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    background: rgb(227,227,227);
+background: linear-gradient(254deg, rgba(227,227,227,1) 0%, rgba(41,76,154,1) 60%);
+}
