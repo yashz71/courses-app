@@ -13,6 +13,7 @@ export class LoginPComponent implements OnInit{
 userFormGroup!: FormGroup;
   constructor(private auth:AuthenticationService,private router :Router,
     private fb:FormBuilder){}
+    res!:boolean | String;
     users!:Users[];
   ngOnInit(): void {
     this.auth.uSers();
@@ -26,8 +27,11 @@ userFormGroup!: FormGroup;
     const password = this.userFormGroup.value.password;
    
 
-    this.auth.log(username,password).subscribe(m=> console.log(m));
-
+    this.auth.log(username,password).subscribe(m =>this.res=m );
+    
+    if(this.res==true){
+      this.router.navigate(["/home/"]);
+    }
    
   }
   userName!:string;

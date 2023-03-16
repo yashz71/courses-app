@@ -1,4 +1,5 @@
 <form class="form" ngForm (submit)="onSubmit($event); assignmentForm.reset()"  #assignmentForm>
+    <form class="form1">
     <mat-form-field>
         <input matInput [(ngModel)]="userName" name="nom" placeholder="User Name" required>
 
@@ -16,5 +17,5 @@
     <button class="ajoutbtn" mat-stroked-button
     color="primary"
     (click)="onSubmit($event)"
-    >Ajouter un devoir</button>
+    >Sign Up</button>
 </form>

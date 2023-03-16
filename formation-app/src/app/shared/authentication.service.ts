@@ -70,7 +70,7 @@ export class AuthenticationService {
   }
   */
  
-   log(username:String, password:string):Observable<String>{
+   log(username:String, password:string):Observable<boolean>{
     
     
     let user= this.users.find(u  => u.userName == username);
@@ -80,8 +80,9 @@ export class AuthenticationService {
     }
     
     
-    return of(user.userName);
+    return of(true);
 }
+
   
 
   logiin(name:any,pass:any){
