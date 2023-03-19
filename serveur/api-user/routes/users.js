@@ -7,7 +7,7 @@ function getUsers(req, res){
     Users.aggregatePaginate(aggregateQuery,
         {
             page: parseInt(req.query.page) || 1,
-            limit: parseInt(req.query.limit) ||10,
+            limit: parseInt(req.query.limit) ||20,
         },
         (err, users) =>{
         if(err){

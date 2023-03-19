@@ -54,8 +54,6 @@ app.route(prefix + '/users/:id')
   
 app.route(prefix + '/users')
   .post(user.postUser)
-  .post(checkDuplicateUsernameOrEmail)
-  .post(controller.signin)
   .put(user.updateUser);
 
 

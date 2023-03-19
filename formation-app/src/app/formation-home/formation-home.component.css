@@ -1,0 +1,102 @@
+.hcards{
+    display: flex;
+    flex-basis: 30%;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+ }
+ .it{
+    background-image: url("../../assets/radowan-nakif-rehan-cYyqhdbJ9TI-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-basis: 30%;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    width: 300px;
+    height: 600px;
+    animation-name: it1;
+    animation-duration: 7s;
+    animation-iteration-count: 10;
+    animation-direction:normal;  
+ }
+ @keyframes it1 {
+    0%   {background-image: url("../../assets/radowan-nakif-rehan-cYyqhdbJ9TI-unsplash.jpg");}
+    50%  {background-image: url("../../assets/juanjo-jaramillo-mZnx9429i94-unsplash.jpg");}
+    100% {background-image: url("../../assets/mohammad-rahmani-CDBkMNZmd7o-unsplash.jpg");}
+  }
+ .trd{
+    background-image: url("../../assets/behnam-norouzi-mp11_hrQXf8-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-basis: 30%;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    width: 300px;
+    height: 600px;
+    animation-name: trd1;
+    animation-duration: 7s;
+    animation-iteration-count: 10;
+    animation-direction:normal; 
+ }
+ @keyframes trd1 {
+    0%   {background-image: url("../../assets/behnam-norouzi-mp11_hrQXf8-unsplash.jpg");}
+    50%  {background-image: url("../../assets/pierre-borthiry-peiobty-vBCVcWUyvyM-unsplash.jpg");}
+    100% {background-image: url("../../assets/dylan-calluy-JpflvzEl5cg-unsplash.jpg");}
+  }
+ .drps{
+    background-image: url("../../assets/aron-yigin-lNpAmLA_bvQ-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-basis: 30%;
+    flex-grow: 1;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    width: 250px;
+    height: 600px;
+    animation-name: drps1;
+    animation-duration: 7s;
+    animation-iteration-count: 10;
+    animation-direction:normal; 
+ }
+ @keyframes drps1 {
+    0%   {background-image: url("../../assets/aron-yigin-lNpAmLA_bvQ-unsplash.jpg");}
+    50%  {background-image: url("../../assets/paolo-chiabrando-K6Zt9su-wx0-unsplash.jpg");}
+    100% {background-image: url("../../assets/pat-whelen-_Bs7tycIPcY-unsplash.jpg");}
+  }
+ .nami1{
+    color: white;
+    margin-left: 100px;
+    margin-bottom: 0%;
+ 
+ }
+ 
+ .akon1{
+    color: white;
+    display: flex;
+    margin-left: 100px;
+    margin-right: 10px;
+    margin-top: 200px;
+    font-size: large;
+    margin-bottom: 0%;
+    font-weight: bold;
+    text-align: center;
+ 
+ }
+ .lonk1{
+ color: white;
+ text-decoration: none;
+ display: block;
+ color:whitesmoke;
+ margin-top: 20px;
+ margin-left: 100px;
+ border: 0px;
+ margin-bottom: 10px;
+ height: 30px;
+ width: 150px;
+ font-weight: bold;
+ }

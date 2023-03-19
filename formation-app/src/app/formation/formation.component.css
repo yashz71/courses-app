@@ -1,12 +1,29 @@
+.container{
+  width: 100%;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.drawer{
+  width: 20%;
+}
+.drawer-content{
+  width: 80%;
+  margin-right: 0px;
+}
 .example-card {
   display: flex;
-  flex-basis: 30%;
+  flex-wrap: nowrap;
+  flex-basis: 70%;
+
   flex-grow: 1;
   flex-shrink: 0;
   
-    height:300px ;
-    max-width: 300px;
+   max-height:300px;
+   min-height: 290px;
+
+   
     margin: 5px;
+    margin-bottom: 5%;
   }
   
   #c-title{
@@ -14,24 +31,42 @@
     margin-left: 50px;
   }
   .cards{
-    margin-left: 20px;
+    margin-left: 30px;
     display: flex;
     flex-grow: 1;
     flex-shrink: 0;
-    flex-basis: 33%;
+    
+    width: 100%;
+    flex-basis:100%;
     flex-wrap: wrap;
   }
   #card-img{
-    margin-left: 70px;
-    height: 150px;
-    width: 150px;
+    margin-right: 10px;
+    display: flex;
+   align-self: flex-end;
+    width: 200px;
+    height: 200px;
+    z-index: 100;
   }
-  #card-btn{
-    margin-left: 70px;
+  #card-btn {
+    display: flex;
+    margin-left: 50px;
+    margin-bottom: 20px;
+   }
+  #card-btn a{
+    
+    text-decoration: none;
+    color: white;
   }
-  #card-p{
-    font-size: small;
-    text-align:left;
+  #card-p {
+    display: inline;
+    width: 400px;
+    position: absolute;
+    bottom: 150px;
+    right:300px;
+    left: 10px;
+    font-size: large;
+
   }
   .main{
     margin-bottom: 0;
@@ -57,4 +92,24 @@
   .log{
     margin: 5px;
   }
+  .list{
+    margin-top: 40px;
+    
+    
+  }
+  .accordion{
+    margin-top: 20px;
+    height: 100px;
+  }
   
+  .itms{
+    margin-top: 20px;
+    min-height: 100px;
+  }
+  .itm{
+    margin-top: 40px;
+  }
+  .dodo{
+    margin: 5px;
+    margin-left: 40%;
+  }

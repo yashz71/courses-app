@@ -1,25 +1,23 @@
 <main class="main">
-<div class="form">
+<div class="card container" style="width:40rem; height: 50rem;">
     <h1 id="title">authetication</h1>
     <form  [formGroup]="userFormGroup" (ngSubmit)="handleLogin()">
-        <div  >
-            <mat-form-field class="InDiv">
+        <div class="card-body" >
+           
+            <mat-form-field class="inp" >
             <label>USER NAME</label>
             <input matInput type="text" formControlName="username" >
         </mat-form-field>
         </div>
-        <div  >
-            <mat-form-field class="InDiv">
+        <div class="card-body" >
+            <mat-form-field class="inp">
             <label>PASSWORD</label>
             <input matInput type="password" formControlName="password">
             </mat-form-field>
         </div>
         <button class="btn" mat-raised-button type="submit" >SUBMIT</button>
-
-    </form>
         <button mat-raised-button (click)="goSignUp()" class="btn" > Don't have Account</button>
-        <div class="imgDiv">
-            
-        </div>
+    </form>
+       
 </div>
 </main>

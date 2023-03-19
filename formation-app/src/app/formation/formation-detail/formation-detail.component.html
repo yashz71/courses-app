@@ -1,13 +1,112 @@
 <main class="main">
-<div *ngIf="coursesP" class="Course">
-    <div class="course-p">
-    <h1 class="title">{{coursesP.title}}</h1>
-    <hr>
-    <img class="img-c" src="{{coursesP.img}}">
-    <hr>
-    <p class="desc-c">Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMake</p>
-   
-</div>
+    <mat-drawer-container class="example-container">
+        <mat-drawer mode="side" opened>
+          <mat-list  >
+            <mat-list-item class="itms">
+              <mat-accordion class="accordion">
+              <mat-expansion-panel class="accordion">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Self aware panel
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p class="accordion"> I'm visible because I am open</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+            </mat-list-item>
+            <mat-divider style="margin-top: 10px;"></mat-divider>
+            <mat-list-item class="itms">
+              <mat-accordion class="accordion">
+              <mat-expansion-panel class="accordion">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Self aware panel
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p class="accordion"> I'm visible because I am open</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+            </mat-list-item>
+            <mat-divider style="margin-top: 10px;"></mat-divider>
+            <mat-list-item class="itms">
+              <mat-accordion class="accordion">
+              <mat-expansion-panel class="accordion">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Self aware panel
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p class="accordion"> I'm visible because I am open</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+            </mat-list-item>
+            <mat-divider style="margin-top: 10px;"></mat-divider>
+           <mat-list-item class="itms">
+              <mat-accordion class="accordion">
+              <mat-expansion-panel class="accordion">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Self aware panel
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p class="accordion"> I'm visible because I am open</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+            </mat-list-item>
+            <mat-divider style="margin-top: 10px;"></mat-divider>
+            <mat-list-item class="itms">
+              <mat-accordion class="accordion">
+              <mat-expansion-panel class="accordion">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Self aware panel
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p class="accordion"> I'm visible because I am open</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+            </mat-list-item>
+            <mat-divider style="margin-top: 10px;"></mat-divider>
+            <mat-list-item class="itms">
+              <mat-accordion class="accordion">
+              <mat-expansion-panel class="accordion">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Self aware panel
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <p class="accordion"> I'm visible because I am open</p>
+        </mat-expansion-panel>
+      </mat-accordion>
+            </mat-list-item>
+          </mat-list>
+        </mat-drawer>
+        <mat-drawer-content><div *ngIf="coursesP">
 
-</div>
+            <div  class="cards">
+
+                <mat-card class="example-card">
+                    <mat-card-header>
+                      <mat-card-title id="c-title">{{coursesP.title}}</mat-card-title>
+                    </mat-card-header>
+                    <img id="card-img" mat-card-image src={{coursesP.img}} alt="Photo of a Shiba Inu">
+                    
+                      <p id="card-p">
+                        e Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l'imprimerie depuis les années 1500, quand un imprimeur anonyme assembla ensemble des morceaux de texte pour réaliser un livre spécimen de polices de texte. Il n'a pas fait que survivre cinq siècles, mais s'est aussi adapté à la bureautique informatique, sans que son contenu n'en soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications de mise en page de texte, comme Aldus PageMake
+                      </p>
+                    
+                    <mat-card-actions>
+                        <button id="card-btn" mat-raised-button color="primary" ><a routerLink="/course/{{coursesP.title}}">More Details</a></button>
+                    </mat-card-actions>
+                  </mat-card>
+                </div>
+           
+        </div></mat-drawer-content>
+      </mat-drawer-container>
+      
+
+            
+           
+        
+
 </main>

@@ -5,6 +5,7 @@ import { Title } from '@angular/platform-browser';
 import { Courses } from './formation/formation-detail/courses.model';
 import { find } from 'rxjs';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

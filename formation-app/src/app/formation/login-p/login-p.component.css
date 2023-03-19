@@ -1,4 +1,4 @@
-html{
+/*html{
     height: 100%;
     width: 100%;
 }
@@ -32,11 +32,36 @@ body{
     display: block;
     width: 500px;
     margin-left: 300px;
-}
+}*/
 .main{
     margin: 0;
     height: 100%;
     width: 100%;
-    background: rgb(227,227,227);
-background: linear-gradient(254deg, rgba(227,227,227,1) 0%, rgba(41,76,154,1) 60%);
+    background-color:black;
+}
+.card{
+   background-color: #966F33;
+
+}
+.btn{
+    
+    margin-left: 30px;
+}
+.inp{
+    width: 500px;
+}
+#title{
+    font-size: 60px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: 80px;
+    margin-top: 50px;
+    display: inline;
+}
+.imgDiv{
+    max-width: 700px;
+    min-width: 600px;
+    max-height: 300px;
+    margin: 10px;
+    margin-left: 0%;
+
 }

@@ -3,25 +3,111 @@
   <div class="img-ber"></div>
   <div class="img-b"></div>
 </div>
-<button mat-raised-button (click)="peuplerBD()">peupleeee</button>
-<button  class="log" mat-raised-button color="primary" [disabled]="!hasPrevPage" (click)="pagePrecedente()">precedente</button>
+<mat-drawer-container class="container">
+  <mat-drawer mode="side" class="drawer" opened>
+    <mat-list  >
+      <mat-list-item class="itms">
+        <mat-accordion class="accordion">
+        <mat-expansion-panel class="accordion">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Self aware panel
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p class="accordion"> I'm visible because I am open</p>
+  </mat-expansion-panel>
+</mat-accordion>
+      </mat-list-item>
+      <mat-divider style="margin-top: 10px;"></mat-divider>
+      <mat-list-item class="itms">
+        <mat-accordion class="accordion">
+        <mat-expansion-panel class="accordion">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Self aware panel
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p class="accordion"> I'm visible because I am open</p>
+  </mat-expansion-panel>
+</mat-accordion>
+      </mat-list-item>
+      <mat-divider style="margin-top: 10px;"></mat-divider>
+      <mat-list-item class="itms">
+        <mat-accordion class="accordion">
+        <mat-expansion-panel class="accordion">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Self aware panel
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p class="accordion"> I'm visible because I am open</p>
+  </mat-expansion-panel>
+</mat-accordion>
+      </mat-list-item>
+      <mat-divider style="margin-top: 10px;"></mat-divider>
+     <mat-list-item class="itms">
+        <mat-accordion class="accordion">
+        <mat-expansion-panel class="accordion">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Self aware panel
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p class="accordion"> I'm visible because I am open</p>
+  </mat-expansion-panel>
+</mat-accordion>
+      </mat-list-item>
+      <mat-divider style="margin-top: 10px;"></mat-divider>
+      <mat-list-item class="itms">
+        <mat-accordion class="accordion">
+        <mat-expansion-panel class="accordion">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Self aware panel
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p class="accordion"> I'm visible because I am open</p>
+  </mat-expansion-panel>
+</mat-accordion>
+      </mat-list-item>
+      <mat-divider style="margin-top: 10px;"></mat-divider>
+      <mat-list-item class="itms">
+        <mat-accordion class="accordion">
+        <mat-expansion-panel class="accordion">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Self aware panel
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p class="accordion"> I'm visible because I am open</p>
+  </mat-expansion-panel>
+</mat-accordion>
+      </mat-list-item>
+    </mat-list>
+    
+  </mat-drawer>
+  <mat-drawer-content class="drawer-content">
 
-<button class="log"  mat-raised-button color="primary" [disabled]="!hasNextPage" (click)="pageSuivante()">suivante</button>
-<div class="cards">
+<div  class="cards">
     <mat-card class="example-card" *ngFor="let courses of courses">
         <mat-card-header>
           <mat-card-title id="c-title">{{courses.title}}</mat-card-title>
         </mat-card-header>
         <img id="card-img" mat-card-image src={{courses.img}} alt="Photo of a Shiba Inu">
-        <mat-card-content>
+        
           <p id="card-p">
             {{courses.desc}}
           </p>
-        </mat-card-content>
+        
         <mat-card-actions>
             <button id="card-btn" mat-raised-button color="primary" ><a routerLink="/course/{{courses.title}}">More Details</a></button>
         </mat-card-actions>
       </mat-card>
     </div>
-   
+  </mat-drawer-content>
+</mat-drawer-container>
+<div class="dodo"><button  class="log" mat-raised-button color="primary" [disabled]="!hasPrevPage" (click)="indexMin()">precedente</button>
+  <span style="color: white;" >{{inDex}}</span>
+  <button class="log"  mat-raised-button color="primary" [disabled]="!hasNextPage" (click)="indexPlus()">suivante</button></div>
+
 </main>

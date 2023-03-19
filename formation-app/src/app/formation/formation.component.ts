@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Courses } from './formation-detail/courses.model';
 import { CourseService } from '../shared/course.service';
 import { ActivatedRoute, Router } from '@angular/router'; 
-
+import { CardsDirective } from '../shared/cards.directive';
+import {PageEvent} from '@angular/material/paginator';
 @Component({
   selector: 'app-formation',
   templateUrl: './formation.component.html',
@@ -10,22 +11,48 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class FormationComponent implements OnInit {
   constructor(private coursesService:CourseService,
-    private router :Router,) {}
+    private router :Router,
+    ) {}
     page: number=1;
-    limit: number=8;
+    limit: number=3;
     totalDocs!: number;
     totalPages!: number;
     hasPrevPage!: boolean;
     prevPage!: number;
     hasNextPage!: boolean;
     nextPage!: number;
+    inDex=1;
+    hidePageSize = true;
+    showPageSizeOptions = false;
+    showFirstLastButtons = true;
+    disabled = false;
+    
+    
   
-
   courses: Courses[]=[];
 
   ngOnInit(): void {
     this.getAssignments()
   }
+  indexPlus(){
+    if(this.hasNextPage){
+      this.page=this.nextPage;
+      this.inDex+=1;
+      this.getAssignments();
+    }
+    
+
+
+  }
+  indexMin(){
+    if(this.hasPrevPage){
+      this.page=this.prevPage;
+      this.inDex-=1;
+      this.getAssignments();
+    }
+
+  }
+ 
   getAssignments(){
     this.coursesService.getAssignmentsPagine(this.page, this.limit)
      .subscribe((data:any) => {

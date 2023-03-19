@@ -17,12 +17,22 @@ import { InputValueDirective } from './shared/input-value.directive';
 import { LoginPComponent } from './formation/login-p/login-p.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SignupComponent } from './formation/signup/signup.component';
+import { CardsDirective } from './shared/cards.directive';
+import { FormationHomeComponent } from './formation-home/formation-home.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
+
 
 const routes : Routes= [
   {path:'', component:LoginPComponent},
   {path:'signup', component:SignupComponent},
   {path:'login', component:LoginPComponent},
-  {path:'home', component:FormationComponent},
+  {path:'Courses', component:FormationComponent},
+  {path:'home', component:FormationHomeComponent},
   {path:'course/:title', component:FormationDetailComponent},
 ];
 
@@ -34,6 +44,8 @@ const routes : Routes= [
     InputValueDirective,
     LoginPComponent,
     SignupComponent,
+    CardsDirective,
+    FormationHomeComponent,
     
     
   ],
@@ -44,10 +56,15 @@ const routes : Routes= [
     MatInputModule,
     MatIconModule,
     MatButtonModule,
+    MatPaginatorModule,
     HttpClientModule,
+    MatListModule,
+    MatExpansionModule,
     MatCardModule,
     MatFormFieldModule,
     ReactiveFormsModule,
+    MatDividerModule,
+    MatSidenavModule,
     FormsModule,
     RouterModule.forRoot(routes),
   
