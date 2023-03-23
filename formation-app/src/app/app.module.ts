@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormationComponent } from './formation/formation.component';
@@ -26,7 +27,6 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import {MatPaginatorModule} from '@angular/material/paginator';
 
 
-
 const routes : Routes= [
   {path:'', component:LoginPComponent},
   {path:'signup', component:SignupComponent},
@@ -35,6 +35,7 @@ const routes : Routes= [
   {path:'home', component:FormationHomeComponent},
   {path:'course/:title', component:FormationDetailComponent},
 ];
+
 
 @NgModule({
   declarations: [
@@ -49,11 +50,15 @@ const routes : Routes= [
     
     
   ],
+  
   imports: [
+    
     BrowserModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     MatInputModule,
+    CommonModule,
+    
     MatIconModule,
     MatButtonModule,
     MatPaginatorModule,
@@ -67,8 +72,12 @@ const routes : Routes= [
     MatSidenavModule,
     FormsModule,
     RouterModule.forRoot(routes),
+    
+    
+    
   
   ],
+  
   providers: [],
   bootstrap: [AppComponent]
 })

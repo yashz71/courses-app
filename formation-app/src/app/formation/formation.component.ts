@@ -4,14 +4,18 @@ import { CourseService } from '../shared/course.service';
 import { ActivatedRoute, Router } from '@angular/router'; 
 import { CardsDirective } from '../shared/cards.directive';
 import {PageEvent} from '@angular/material/paginator';
+
 @Component({
   selector: 'app-formation',
   templateUrl: './formation.component.html',
   styleUrls: ['./formation.component.css']
+
 })
+
 export class FormationComponent implements OnInit {
   constructor(private coursesService:CourseService,
     private router :Router,
+    
     ) {}
     page: number=1;
     limit: number=3;

@@ -58,8 +58,6 @@ app.route(prefix + '/users')
 
 
 
-
-
   
 // On démarre le serveur
 app.listen(port, "0.0.0.0");

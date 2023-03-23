@@ -101,6 +101,8 @@
         
         <mat-card-actions>
             <button id="card-btn" mat-raised-button color="primary" ><a routerLink="/course/{{courses.title}}">More Details</a></button>
+            
+  
         </mat-card-actions>
       </mat-card>
     </div>
@@ -109,5 +111,5 @@
 <div class="dodo"><button  class="log" mat-raised-button color="primary" [disabled]="!hasPrevPage" (click)="indexMin()">precedente</button>
   <span style="color: white;" >{{inDex}}</span>
   <button class="log"  mat-raised-button color="primary" [disabled]="!hasNextPage" (click)="indexPlus()">suivante</button></div>
-
+  
 </main>
