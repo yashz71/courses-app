@@ -2,6 +2,7 @@
   <div class="cont">
   <div class="img-ber"></div>
   <div class="img-b"></div>
+  
 </div>
 <mat-drawer-container class="container">
   <mat-drawer mode="side" class="drawer" opened>
@@ -111,5 +112,6 @@
 <div class="dodo"><button  class="log" mat-raised-button color="primary" [disabled]="!hasPrevPage" (click)="indexMin()">precedente</button>
   <span style="color: white;" >{{inDex}}</span>
   <button class="log"  mat-raised-button color="primary" [disabled]="!hasNextPage" (click)="indexPlus()">suivante</button></div>
+  <button mat-raised-button  (click)="peuplerBD()">peuplerr</button>
   
 </main>

@@ -69,10 +69,11 @@ body{
       display: inline;
       width: 700px;
       position: absolute;
-      bottom: 100px;
+      bottom: 150px;
       right:300px;
       left: 10px;
       font-size: medium;
+      color: aliceblue;
   
     }
     

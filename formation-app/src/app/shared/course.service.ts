@@ -76,6 +76,8 @@ export class CourseService {
       nouvelAssignment.title= a.title.toLowerCase();
       nouvelAssignment.desc = a.desc;
       nouvelAssignment.img = a.img;
+      nouvelAssignment.price= a.price;
+      nouvelAssignment.l_desc=a.l_desc;
  
       appelsVersAddAssignment.push(this.addAssignment(nouvelAssignment));
     });

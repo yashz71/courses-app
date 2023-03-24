@@ -6,7 +6,9 @@ let CoursesSchema = Schema({
     id: Number,
     title: String,
     desc: String,
-    img: String
+    img: String,
+    l_desc: String,
+    price:Number
 });
 CoursesSchema.plugin(aggregatePaginate);
 

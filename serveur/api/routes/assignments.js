@@ -44,6 +44,8 @@ function postAssignment(req, res){
     assignment.title = req.body.title;
     assignment.desc = req.body.desc;
     assignment.img = req.body.img;
+    assignment.price = req.body.price;
+    assignment.l_desc= req.body.l_desc;
 
     console.log("POST assignment reçu :");
     console.log(assignment)

@@ -3,4 +3,7 @@ export class Courses{
     title!:string;
     desc!: string;
     img!: string;
+    l_desc!:string;
+    price!:number;
+
 }
