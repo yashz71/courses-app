@@ -8,7 +8,7 @@ const router = express.Router()
 let mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
-const uri = 'mongodb+srv://Youssef:KLPHvTh5Zup6oHEo@cluster0.bzvglhj.mongodb.net/users?retryWrites=true&w=majority';
+const uri = '';
 
 
 
