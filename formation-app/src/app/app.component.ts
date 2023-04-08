@@ -18,8 +18,7 @@ export class AppComponent {
   title: any;
   
  
-  constructor(private courseService:CourseService,
-    private route :ActivatedRoute,
+  constructor(
     private router :Router,){}
     onSubmit() {
       

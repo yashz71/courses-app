@@ -4,7 +4,9 @@ const controller = require("./controllers/controllers");
 let bodyParser = require('body-parser');
 let user = require('./routes/users');
 let verify = require('./middleware/verify');
+const router = express.Router()
 let mongoose = require('mongoose');
+
 mongoose.Promise = global.Promise;
 const uri = 'mongodb+srv://Youssef:KLPHvTh5Zup6oHEo@cluster0.bzvglhj.mongodb.net/users?retryWrites=true&w=majority';
 
@@ -41,6 +43,7 @@ app.use(function (req, res, next) {
   
   let port = process.env.PORT || 8080; 
 
+  app.use(express.json())
 
   // les routes
 const prefix = '/api';
@@ -52,13 +55,12 @@ app.route(prefix + '/users/:id')
   .get(user.getUser)
   .delete(user.deleteUser);
   
-app.route(prefix + '/users')
-  .post(user.postUser)
-  .put(user.updateUser);
 
+  app.route(prefix + '/signin')
+  .post(user.signin)
+  app.route(prefix + '/signup')
+  .post(user.signup)
 
-
-  
 // On démarre le serveur
 app.listen(port, "0.0.0.0");
 console.log('Serveur démarré sur http://localhost:' + port);

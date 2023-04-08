@@ -1,4 +1,9 @@
 let Users = require('../model/user-shema');
+var bcrypt = require("bcryptjs");
+var jwt = require("jsonwebtoken");
+const config =require("../config/auth.config");
+
+
 
 
 
@@ -80,5 +85,69 @@ function deleteUser(req, res) {
     })
     
 }
+function signup  (req, res)  {
+  // Save User to Database
+  const user = new Users({
+    userName: req.body.userName,
+    userMail: req.body.usereMail,
+    userPassword: bcrypt.hashSync(req.body.userPassword, 8)
+  });
+  Users.findOne({
+    userName: req.body.userName
+  }).exec((err,users)=>{
+    if(users){
+      return res.status(404).send({ message: "User Already existing." });
+    }
+    user.save((err, _user) => {
+      if (err) {
+        res.status(500).send({ message: err });
+        return;
+      }
+      res.send({ message: "User was registered successfully!" });
+            });
+  
+  })
 
-module.exports = { getUsers,postUser, getUser, updateUser, deleteUser };
+          
+        
+};
+function signin  (req, res)  {
+  Users.findOne({
+    userName: req.body.userName
+  })
+    .exec((err, user) => {
+      if (err) {
+        res.status(500).send({ message: err });
+        return;
+      }
+
+      if (!user) {
+        return res.status(404).send({ message: "User Not found." });
+      }
+
+      var passwordIsValid = bcrypt.compareSync(
+        req.body.userPassword,
+        user.userPassword
+      );
+
+      if (!passwordIsValid) {
+        return res.status(401).send({
+          accessToken: null,
+          message: "Invalid Password!"
+        });
+      }
+
+      var token = jwt.sign({ id: user._id }, config.secret, {
+        expiresIn: 86400 // 24 hours
+      });
+
+     
+      res.status(200).send({
+        id: user._id,
+        username: user.userName,
+        accessToken: token
+      });
+    });
+};
+
+module.exports = { getUsers,postUser,signin,signup, getUser, updateUser, deleteUser };

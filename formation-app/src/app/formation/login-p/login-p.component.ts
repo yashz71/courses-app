@@ -16,22 +16,27 @@ userFormGroup!: FormGroup;
     res!:boolean | String;
     users!:Users[];
   ngOnInit(): void {
-    this.auth.uSers();
+    
    this.userFormGroup=this.fb.group({
     username :this.fb.control(""),
     password : this.fb.control("")
    })   
   }
   handleLogin(){
-    const username = this.userFormGroup.value.username;
-    const password = this.userFormGroup.value.password;
+    const username:string = this.userFormGroup.value.username;
+    const password:String = this.userFormGroup.value.password;
    
 
-    this.auth.log(username,password).subscribe(m =>this.res=m );
+    this.auth.login(username,password).subscribe(
+      res => {
+        console.log(res);
+        localStorage.setItem('token', res.token);
+       
+      },
+      err => console.log(err)
+    ) ;
     
-    if(this.res==true){
-      this.router.navigate(["/home/"]);
-    }
+    
    
   }
   userName!:string;
@@ -39,10 +44,5 @@ userPass!:string;
 goSignUp(){
   this.router.navigate(["/signup/"]);
 }
-  onSubmit(){
-    const name="moha";
-    const pass="63f4dfa9e1df94ec"
 
-   // this.auth.login(this.userName,this.userPass).subscribe(m=> console.log(m));
-
-  }}
+}
