@@ -15,7 +15,7 @@ export class AppComponent {
   
  nom!: String;
   ID!: Number;
-  title: any;
+  title="formation-app";
   
  
   constructor(

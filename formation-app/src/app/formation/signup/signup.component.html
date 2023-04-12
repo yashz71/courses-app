@@ -14,7 +14,7 @@
         <input matInput type="password" [(ngModel)]="userPass" name="nom" placeholder="Password" required>
 
     </mat-form-field>
-    <button class="ajoutbtn" mat-stroked-button
+    <button class="ajoutbtn" mat-stroked-button [disabled]="cform"
     color="primary"
     (click)="onSubmit($event)"
     >Sign Up</button>

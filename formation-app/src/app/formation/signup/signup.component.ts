@@ -2,6 +2,7 @@ import { Component,OnInit } from '@angular/core';
 import { AuthenticationService } from 'src/app/shared/authentication.service';
 import { Users } from 'src/app/shared/users.model';
 import { Router } from '@angular/router';
+import { throwError } from 'rxjs';
 
 @Component({
   selector: 'app-signup',
@@ -13,14 +14,35 @@ export class SignupComponent implements OnInit {
   userMail!:String;
   userName!:string;
   userPass!:String; 
+  values!:String;
+  cform=false;
+  i!:number;
+  sp:number=0;
   ngOnInit(): void {
-   
     
     
   }
+  throwErr(): never {
+    throw new Error('Something went wrong');
+  }
+  onKey(a:String) { // with type info
+    for(this.i=0;this.i<=a.length;this.i++){
+      if (a[this.i]== "!" || a[this.i]== "@" || a[this.i]== "#" ||a[this.i]== "$" || a[this.i]== "%" || a[this.i]== "^" || a[this.i]== "&" || a[this.i]== "*" ){
+        this.sp=1;
+        break;
+      
+      }
+}
+    if(a.length<10 || this.sp==0){
+      
+      this.throwErr();
+    }
+  }
+  
   
   onSubmit(event: { preventDefault: () => void; }){
     event.preventDefault();
+    this.onKey(this.userPass);
     const newUser = new Users();
     newUser.userMail = this.userMail;
     newUser.userName = this.userName;

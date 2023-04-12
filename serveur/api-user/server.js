@@ -1,15 +1,35 @@
 let express = require('express');
 let app = express();
-const controller = require("./controllers/controllers");
 let bodyParser = require('body-parser');
 let user = require('./routes/users');
-let verify = require('./middleware/verify');
 const router = express.Router()
 let mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
-const uri = '';
+const uri = 'mongodb+srv://Youssef:KLPHvTh5Zup6oHEo@cluster0.bzvglhj.mongodb.net/users?retryWrites=true&w=majority';
+class TokenBucket {
 
+  constructor(capacity, fillPerSecond) {
+      this.capacity = capacity;
+      this.tokens = capacity;
+      setInterval(() => this.addToken(), 1000 / fillPerSecond);
+  }
+
+  addToken() {
+      if (this.tokens < this.capacity) {
+          this.tokens += 1;
+      }
+  }
+
+  take() {
+      if (this.tokens > 0) {
+          this.tokens -= 1;
+          return true;
+      }
+
+      return false;
+  }
+}
 
 
 const options = {
@@ -48,11 +68,33 @@ app.use(function (req, res, next) {
   // les routes
 const prefix = '/api';
 
+
+function limitRequests(perSecond, maxBurst) {
+  const bucket = new TokenBucket(maxBurst, perSecond);
+
+  // Return an Express middleware function
+  return function limitRequestsMiddleware(req, res, next) {
+      if (bucket.take()) {
+          next();
+      } else {
+          res.status(429).send('Rate limit exceeded');
+      }
+  }
+}
+
+
+app.get(prefix+'/',
+  limitRequests(5, 10), // Apply rate limiting middleware
+  (req, res) => {
+      res.send('Hello from the rate limited API');
+  }
+);
+
 app.route(prefix + '/users')
   .get(user.getUsers);
 
 app.route(prefix + '/users/:id')
-  .get(user.getUser)
+  
   .delete(user.deleteUser);
   
 
@@ -65,7 +107,6 @@ app.route(prefix + '/users/:id')
 app.listen(port, "0.0.0.0");
 console.log('Serveur démarré sur http://localhost:' + port);
 
-module.exports = verify;
 
 module.exports = app;
 
