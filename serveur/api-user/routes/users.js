@@ -6,6 +6,46 @@ const { Validator } = require('node-input-validator');
 
 
 
+class TokenBucket {
+
+  constructor(capacity, fillPerSecond) {
+      this.capacity = capacity;
+      this.tokens = capacity;
+      setInterval(() => this.addToken(), 1000 / fillPerSecond);
+  }
+
+  addToken() {
+      if (this.tokens < this.capacity) {
+          this.tokens += 1;
+      }
+  }
+
+  take() {
+      if (this.tokens > 0) {
+          this.tokens -= 1;
+          return true;
+      }
+
+      return false;
+  }
+}
+function limitRequests(perSecond, maxBurst) {
+  const bucket = new TokenBucket(maxBurst, perSecond);
+
+  // Return an Express middleware function
+  return function limitRequestsMiddleware(req, res, next) {
+      if (bucket.take()) {
+          next();
+      } else {
+          res.status(429).send('Rate limit exceeded');
+      }
+  }
+}
+
+
+
+
+
 
 function getUsers(req, res){
     var aggregateQuery=Users.aggregate();
@@ -62,6 +102,7 @@ function deleteUser(req, res) {
 }
 
 function signup  (req, res)  {
+  
  
   // Save User to Database
   const v = new Validator(req.body, {

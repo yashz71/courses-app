@@ -83,24 +83,12 @@ function limitRequests(perSecond, maxBurst) {
 }
 
 
-app.get(prefix+'/',
-  limitRequests(5, 10), // Apply rate limiting middleware
-  (req, res) => {
-      res.send('Hello from the rate limited API');
-  }
-);
 
-app.route(prefix + '/users')
-  .get(user.getUsers);
-
-app.route(prefix + '/users/:id')
-  
-  .delete(user.deleteUser);
   
 
-  app.route(prefix + '/signin')
+  app.route(prefix + '/signin',limitRequests(5, 10))
   .post(user.signin)
-  app.route(prefix + '/signup')
+  app.route(prefix + '/signup',limitRequests(5, 10))
   .post(user.signup)
 
 // On démarre le serveur
