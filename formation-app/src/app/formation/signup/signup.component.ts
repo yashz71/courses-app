@@ -42,7 +42,6 @@ export class SignupComponent implements OnInit {
   
   onSubmit(event: { preventDefault: () => void; }){
     event.preventDefault();
-    this.onKey(this.userPass);
     const newUser = new Users();
     newUser.userMail = this.userMail;
     newUser.userName = this.userName;

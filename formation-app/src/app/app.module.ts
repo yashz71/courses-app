@@ -26,7 +26,6 @@ import {MatListModule} from '@angular/material/list';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatPaginatorModule} from '@angular/material/paginator';
 
-
 const routes : Routes= [
   {path:'', component:LoginPComponent},
   {path:'signup', component:SignupComponent},
@@ -47,6 +46,7 @@ const routes : Routes= [
     SignupComponent,
     CardsDirective,
     FormationHomeComponent,
+   
     
     
   ],

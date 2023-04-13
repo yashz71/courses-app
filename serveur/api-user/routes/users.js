@@ -3,44 +3,13 @@ var bcrypt = require("bcryptjs");
 var jwt = require("jsonwebtoken");
 const {secret} = require("../config/auth.config");
 const { Validator } = require('node-input-validator');
+const { body, validationResult } = require('express-validator');
 
 
 
-class TokenBucket {
 
-  constructor(capacity, fillPerSecond) {
-      this.capacity = capacity;
-      this.tokens = capacity;
-      setInterval(() => this.addToken(), 1000 / fillPerSecond);
-  }
 
-  addToken() {
-      if (this.tokens < this.capacity) {
-          this.tokens += 1;
-      }
-  }
 
-  take() {
-      if (this.tokens > 0) {
-          this.tokens -= 1;
-          return true;
-      }
-
-      return false;
-  }
-}
-function limitRequests(perSecond, maxBurst) {
-  const bucket = new TokenBucket(maxBurst, perSecond);
-
-  // Return an Express middleware function
-  return function limitRequestsMiddleware(req, res, next) {
-      if (bucket.take()) {
-          next();
-      } else {
-          res.status(429).send('Rate limit exceeded');
-      }
-  }
-}
 
 
 
@@ -113,7 +82,7 @@ function signup  (req, res)  {
 
   v.check().then((matched) => {
     if (!matched) {
-      return res.status(422).send(v.errors);
+      return res.status(422).json(v.errors);
     }
     if(matched){
       const user = new Users({
@@ -150,7 +119,7 @@ function signin  (req, res)  {
 
   v.check().then((matched) => {
     if (!matched) {
-      res.status(422).send(v.errors);
+      res.status(422).json(v.errors);
     }
     if(matched){
       Users.findOne({
