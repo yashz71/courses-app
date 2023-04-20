@@ -3,7 +3,6 @@ var bcrypt = require("bcryptjs");
 var jwt = require("jsonwebtoken");
 const {secret} = require("../config/auth.config");
 const { Validator } = require('node-input-validator');
-const { body, validationResult } = require('express-validator');
 
 
 
@@ -75,7 +74,7 @@ function signup  (req, res)  {
  
   // Save User to Database
   const v = new Validator(req.body, {
-    userName: 'required',
+    userName: 'required|maxLength:10',
     userMail: 'required|email',
     userPassword: 'required|minLength:10|regex:^[a-zA-Z0-9!@#$%^&*]+$'
   });
@@ -113,7 +112,7 @@ function signup  (req, res)  {
 function signin  (req, res)  {
   
   const v = new Validator(req.body, {
-    userName: 'required',
+    userName: 'required|maxLength:10',
     userPassword: 'required'
   });
 

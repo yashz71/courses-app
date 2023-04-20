@@ -4,6 +4,8 @@ let bodyParser = require('body-parser');
 let user = require('./routes/users');
 const router = express.Router()
 let mongoose = require('mongoose');
+const { body, validationResult } = require('express-validator');
+
 
 mongoose.Promise = global.Promise;
 const uri = 'mongodb+srv://Youssef:KLPHvTh5Zup6oHEo@cluster0.bzvglhj.mongodb.net/users?retryWrites=true&w=majority';

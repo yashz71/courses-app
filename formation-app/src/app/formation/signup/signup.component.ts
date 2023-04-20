@@ -18,6 +18,7 @@ export class SignupComponent implements OnInit {
   cform=false;
   i!:number;
   sp:number=0;
+  err!:string;
   ngOnInit(): void {
     
     
@@ -48,7 +49,7 @@ export class SignupComponent implements OnInit {
     newUser.userPassword = this.userPass;
     //this.nouvelAssignment.emit(newAssignment);
     this.auth.addUser(newUser)
-    .subscribe(message => console.log(message));
+    .subscribe(message => this.err=message );
   }  
 
 }

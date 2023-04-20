@@ -29,7 +29,7 @@ userFormGroup!: FormGroup;
 
     this.auth.login(username,password).subscribe(
       res => {
-        console.log(res);
+        
         localStorage.setItem('token', res.token);
        
       },
