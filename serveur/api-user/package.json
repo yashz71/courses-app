@@ -16,8 +16,8 @@
     "express-sanitizer": "^1.0.6",
     "express-validator": "^6.15.0",
     "jsonwebtoken": "^9.0.0",
-    "mongodb": "^5.0.1",
-    "mongoose": "^6.9.2",
+    "mongodb": "^5.8.0",
+    "mongoose": "^6.12.0",
     "mongoose-aggregate-paginate-v2": "^1.0.6",
     "node-input-validator": "^4.5.1"
   }
