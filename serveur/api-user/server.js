@@ -8,7 +8,7 @@ const { body, validationResult } = require('express-validator');
 
 
 mongoose.Promise = global.Promise;
-const uri = 'mongodb+srv://Youssef:KLPHvTh5Zup6oHEo@cluster0.bzvglhj.mongodb.net/users?retryWrites=true&w=majority';
+const uri = '';
 class TokenBucket {
 
   constructor(capacity, fillPerSecond) {
